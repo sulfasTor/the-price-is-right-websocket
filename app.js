@@ -130,20 +130,21 @@ io.on('connection', function(socket){
 		
 		/*quiz.html*/
 		socket.on('quiz_init',function(data){
-			if(!session.ready_for_quiz){
-				socket.emit('quiz_init_nok');		
-				return;
-			}
+		    if(!session.ready_for_quiz){
+			    socket.emit('quiz_init_nok');		
+			    return;
+		    }
 			
-			var participantId = session.participantId;
-			var participant = quizzes.getParticipant(session.quiz_id,participantId);
-			
-			socket.emit('quiz_init_ok',{userType: participant.getUserType() });
-			
-			participant.updateSocket(socket);
+		    var participantId = session.participantId;
+		    var participant = quizzes.getParticipant(session.quiz_id,participantId);
+
+		    socket.emit('quiz_init_ok',{userType: participant.getUserType() ,
+                                                team: participant.isRealParticipant ? participant.getTeamname() : ''});
+		    
+		    participant.updateSocket(socket);
 			quizzes.sendUpdates(participant);
 		});
-		
+
 		socket.on('quiz_send_answer',function(data){
 			if(!session.ready_for_quiz){
 				socket.emit('quiz_init_nok');		
