@@ -4,12 +4,13 @@ admincode test
 quizcode test
 
 q Donnez la date de naissance du St Prophète Mohammad (saw) (mois et année)
-time 10
+time 5
 marks 1
-a En Avril 580
-ac En Aout 570
-a En Aout 570
-a En Aout 570
+a 1
+ac 2
+a 3
+a 4
+p https://www.amazon.com/dp/B00BQ3BRKC?_encoding=UTF8&SubscriptionId=AKIAJZVN57AVTBBCDT2Q&camp=2025&creative=386001&creativeASIN=B00BQ3BRKC&linkCode=xm2&showDetailTechData=1&tag=randomking20-20#technical-data
 !
 
 q Qui est cette personne?

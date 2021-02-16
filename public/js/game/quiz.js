@@ -267,7 +267,7 @@ function GameWorld(){
 
 	$('#question_area .question').html(stateParams.question + ' (' + stateParams.marks + ')' );
         $('#proofLink').attr('href', "");
-        $('#proofLink').hide();
+        $('#proof').hide();
         $('#proof .answer').html("");
         $('#answer_id').val('');
 
@@ -315,7 +315,7 @@ this.showAnswer = function(stateParams){
 	}
 
         $('#proofLink').attr('href', proof);
-        $('#proofLink').show();
+        $('#proof').show();
         $('#proof .answer').html("<span >Answer: $" + correctAnswerId +"</span>");
 
 	if(userType=='official_participant' || userType=='unofficial_participant'){

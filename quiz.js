@@ -575,7 +575,7 @@ function Question(){
 
     this.addCorrectAnswer = function(pAnswer){
 	answers.push(pAnswer);
-	correctAnswerId = answers.length;
+	correctAnswerId = answers[0];
     }
 
     this.getQuestionOnly = function(){
@@ -884,7 +884,6 @@ function Quiz(pQuizId){
 	var curState = quizState.get();
 	if(!(curState==states.SHOW_QUESTION || curState==states.TEST_QUESTION)) return;
 
-        debugger;
 	var hiddenParams = quizState.getHiddenParams();
 	var answerId = hiddenParams.answerId;
 	var test = hiddenParams.test;
